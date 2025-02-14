@@ -1,6 +1,8 @@
 # chat-pdf-streamlit-app
 This app will enable you to chat with multiple PDFs
 
+NOTE: If you want a better peformance, edit code to use a better LLM and embedding model from hugginface, right now the LLm model used in the code has a model size of just 248M params, and embedding model has a size of just 22.7M params. I selected these models because they are ligthweight. If you schoose to go with this, don't expect good performance, to be honest, expect bad performance. 🙂
+
 ## To run locally
 
 ### Requirements:
