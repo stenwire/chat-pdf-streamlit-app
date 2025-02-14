@@ -123,7 +123,7 @@ def main():
                     raw_text = get_pdf_text(pdf_docs)
                     text_chunks = get_text_chunks(raw_text)
                     vectorstore = get_vector_store(text_chunks)
-                    st.session_state.conversation = get_conversation_chain(vectorstore, use_openai=False)
+                    st.session_state.conversation = get_conversation_chain(vectorstore, use_openai=True)
                     st.success("Processing complete!")
 
                 except Exception as e:
