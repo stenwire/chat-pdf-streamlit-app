@@ -35,13 +35,16 @@ def get_text_chunks(raw_text):
 def get_conversation_chain(vectorstore, use_openai=False):
     if use_openai:
         llm = ChatOpenAI()
-    llm = HuggingFaceHub(
-        repo_id="google/flan-t5-base",
-        model_kwargs={
-            'temperature': 0.5,
-            'max_length': 512,
-        }
-    )
+        st.sidebar.info(f'Using: OpenAI')
+    else:
+        llm = HuggingFaceHub(
+            repo_id="google/flan-t5-base",
+            model_kwargs={
+                'temperature': 0.5,
+                'max_length': 512,
+            }
+        )
+        st.sidebar.info(f'Using: HuggingFace')
 
 
     memory = ConversationBufferMemory(
